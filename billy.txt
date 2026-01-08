@@ -33,3 +33,40 @@ def calculate_bill(units):
 # Take input manually
 units = int(input("Enter number of units consumed: "))
 calculate_bill(units)
+
+
+
+
+
+
+ 
+# ATM Withdrawal Program
+
+def atm_transaction():
+    # Initial balance stored in the system
+    balance = 5000.00
+    print(f"Current Balance: ₹{balance}")
+
+    try:
+        # Taking withdrawal amount as input
+        amount = int(input("Enter the amount to withdraw (multiples of 100): "))
+
+        # Validation 1: Check if amount is a multiple of 100
+        if amount % 100 != 0:
+            print("Error: Amount must be a multiple of 100 (e.g., 100, 200, 500).")
+        
+        # Validation 2: Check for sufficient balance
+        elif amount > balance:
+            print("Error: Insufficient balance.")
+        
+        # Success: Deduct and update
+        else:
+            balance -= amount
+            print("Transaction successful!")
+            print(f"Please collect your cash. Updated Balance: ₹{balance}")
+
+    except ValueError:
+        print("Error: Please enter a valid whole number.")
+
+# Run the program
+atm_transaction()
