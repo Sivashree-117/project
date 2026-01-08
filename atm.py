@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 def withdraw_cash(balance):
     """
     Handles the ATM withdrawal logic, checking for sufficient balance 
@@ -44,3 +45,5 @@ if __name__ == "__main__":
     # Run the withdrawal function
     user_balance = withdraw_cash(user_balance)
 
+=======
+>>>>>>> 01496135a4936470f7212e210f6192366d23fe96
