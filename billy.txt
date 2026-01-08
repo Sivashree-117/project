@@ -1,0 +1,35 @@
+def calculate_bill(units):
+    # Initialize charges
+    first_charge = second_charge = remaining_charge = 0
+
+    # First 100 units → ₹2/unit
+    if units > 0:
+        first_units = min(units, 100)
+        first_charge = first_units * 2
+
+    # Next 100 units → ₹3/unit
+    if units > 100:
+        second_units = min(units - 100, 100)
+        second_charge = second_units * 3
+
+    # Remaining units → ₹5/unit
+    if units > 200:
+        remaining_units = units - 200
+        remaining_charge = remaining_units * 5
+    else:
+        remaining_units = 0
+
+    # Total bill
+    total = first_charge + second_charge + remaining_charge
+
+    # Display breakdown
+    print(f"Units = {units}")
+    print(f"First 100 units = 100 * 2 = {first_charge}")
+    print(f"Second 100 units = 100 * 3 = {second_charge}")
+    print(f"Remaining {remaining_units} units = {remaining_units} * 5 = {remaining_charge}")
+    print(f"Total Bill = {total}")
+
+
+# Take input manually
+units = int(input("Enter number of units consumed: "))
+calculate_bill(units)
